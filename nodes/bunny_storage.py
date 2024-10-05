@@ -3,7 +3,7 @@ import tempfile
 import uuid
 
 import numpy as np
-from BunnyCDN.Storage import Storage
+from bunnycdn_storage import Storage
 from PIL import Image
 
 
