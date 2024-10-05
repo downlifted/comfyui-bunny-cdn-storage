@@ -42,7 +42,7 @@ class SaveImageToBunnyStorage:
         for (batch_number, image) in enumerate(images):
             i = 255. * image.cpu().numpy()
             img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
-            with tempfile.NamedTemporaryFile(suffix='.png', dir='/tmp') as tmp:
+            with tempfile.NamedTemporaryFile(suffix='.png') as tmp:
                 img.save(tmp, format='PNG')
                 filename = "%s/%s.png" % (pathname, uuid.uuid4().hex)
                 save_file(client, filename, tmp.name)
